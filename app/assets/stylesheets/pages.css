@@ -1,0 +1,69 @@
+.titleBlock {
+  font-size: 50px;
+  text-align: center;
+  font-weight: bold;
+  color: whitesmoke;
+  position: relative;
+}
+
+.card {
+  background-color: rgba(243, 243, 243, 0.75);
+  width: 250px;
+  height: 300px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: inline-block;
+  margin: 30px;
+  border-radius: 8px;
+}
+
+.whiteFilm {
+  background-color: rgba(121, 121, 121, 0.75);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1000px;
+}
+
+
+.cardContainer {
+  text-align: center;
+  width: 100%;
+}
+
+.descriptionBlock {
+  font-size: 20px;
+  text-align: left;
+  padding: 15px;
+  position: relative;
+  color: aliceblue;
+}
+
+.block2 {
+  background-color: aliceblue;
+  font-size: 20px;
+  text-align: left;
+  padding: 15px;
+  left: 0;
+  top: 0;
+  position: absolute;
+}
+
+.bg { 
+  /* The image used */
+  background-image: url("mountain2.jpg");
+
+  /* Full height */
+  /* relative to the size of the browser window */
+  width: 100%;
+  height: 1000px;
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  position: absolute;
+  left: 0;
+  top: 0;
+}
