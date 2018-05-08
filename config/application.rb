@@ -11,6 +11,7 @@ module AlphaBlog
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
     config.assets.initialize_on_precompile = false
+    config.assets.compile = true 
     config.serve_static_assets = true
     config.assets.digest = true
 
