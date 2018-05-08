@@ -51,7 +51,7 @@
 
 .bg { 
   /* The image used */
-  background-image: url("mountain2.jpg");
+  background-image: url("./mountain2.jpg");
 
   /* Full height */
   /* relative to the size of the browser window */
