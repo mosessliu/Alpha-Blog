@@ -1,5 +1,6 @@
 <h1>Showing selected article</h1>
 
+
 <p>
   <h4>Title: </h5>
   <%= @article.title %><br/>
@@ -7,6 +8,9 @@
   <%= @article.description%>
 </p>
 
-<%= link_to 'Create another article', new_article_path %>
+<%= link_to 'Create another article', new_article_path %><br/>
+<%= link_to 'Back to articles listing', articles_path%><br/>
+<%= link_to 'Edit this article', edit_article_path(@article) %><br/>
+
 
 
