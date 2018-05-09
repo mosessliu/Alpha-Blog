@@ -1,4 +1,10 @@
 class ArticlesController < ApplicationController
+
+  def index
+    @articles = Article.all
+    puts @articles
+  end
+
   def new
     puts "hello"
     @article = Article.new
@@ -32,13 +38,13 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def index
-    @articles = Article.all
-    puts @articles
-
-
+  def destroy
+    @article = Article.find params[:id]
+    @article.destroy
+    flash[:notice] = "Article was successfully destroyed"
+    redirect_to articles_path
   end
-
+  
   private
     def article_params
       return params.require(:article).permit(:title, :description)

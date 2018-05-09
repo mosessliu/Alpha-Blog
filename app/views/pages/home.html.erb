@@ -5,14 +5,11 @@
 		<div class = "bg"></div>
 			<div class = "whiteFilm">
 				<div class="titleBlock" style="margin-top:80px">
-					Welcome to Alpha Blog
+					Welcome to 
+					<%= link_to 'Alpha Blog', articles_path%><br/>
+					<%= link_to 'About', about_path%>
 				</div>
 			</div>
 		</div>
 	</body>
-	<footer style="position:absolute; top:1000px; left:20px" >
-		<p>Design by: Moses Liu</p>
-		<%= link_to('About', about_path)%>
-		<div style="height:20px"></div>
-	</footer>
 </html>
