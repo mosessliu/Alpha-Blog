@@ -1,16 +1,19 @@
-<h1>Showing selected article</h1>
 
-
-<p>
-  <h4>Title: </h5>
-  <%= @article.title %><br/>
-  <h4>Description: </h5>
-  <%= @article.description%>
-</p>
-
-<%= link_to 'Create another article', new_article_path %><br/>
-<%= link_to 'Back to articles listing', articles_path%><br/>
-<%= link_to 'Edit this article', edit_article_path(@article) %><br/>
-
-
+<div class = "well col-xs-8 col-xs-offset-2">
+  <div class = "article-title">
+    <%= @article.title %>
+  </div>
+  <div class = "article-description" style = "margin-top: 5px">
+    <%= simple_format(@article.description)%></br>
+  </div>
+  <div class = "article-actions">
+    <%= link_to 'Back to articles listing', articles_path, class: "btn btn-sm btn-primary"%>
+    <%= link_to 'Delete this article', 
+      article_path(@article), 
+      method: :delete, 
+      data: {confirm: "Are you sure?"}, 
+      class: 'btn btn-sm btn-danger'%>
+    <%= link_to 'Edit this article', edit_article_path(@article), class: "btn btn-sm btn-success"%>
+  </div>
+</div>
 

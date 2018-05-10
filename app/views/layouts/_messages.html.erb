@@ -1,5 +1,10 @@
-<% flash.each do |name, msg|%>
-  <ul>
-    <li><%= msg %></li>
-  </ul>
-<% end %>
+<div class = "row">
+  <div class = "col-xs-10 col-xs-offset-1">
+    <% flash.each do |name, msg|%>
+      <div class = 'alert alert-<%="#{name}"%> alert-dismissable'>
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong><%=name.capitalize%>: </strong><%=msg%>
+      </div>
+    <% end %>
+  </div>
+</div>
