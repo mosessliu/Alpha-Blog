@@ -10,7 +10,7 @@
       <div class = "well well-lg">
         <%=link_to "#{article.title}", article_path(article), class: "article-title" %>
         <div class = "article-description" style= "margin-top:5px">
-          <%=article.description%>
+          <%=simple_format(article.description)%>
         </div>
         <div class = "article-actions" style="margin-top:20px">
           <%=link_to "Show", article_path(article), class:'btn btn-sm btn-success'%>
