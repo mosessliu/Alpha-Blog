@@ -1,0 +1,11 @@
+<h3 align='center' style='margin-bottom:15px'>
+  <%= @user.username %>'s Articles
+</h3>
+
+<div class='row' align='center'>
+  <div class = 'col-xs-8 col-xs-offset-2' style='margin-bottom:15px'>
+    <%= gravatar_for@user, size: 100%>
+  </div>
+</div>
+
+<%= render 'shared/articles', articles: @user.articles %>
