@@ -4,6 +4,6 @@
   <%=link_to "New Article", new_article_path, class:'btn btn-md btn-success'%>
 </div>
 
-<%= render 'shared/articles' %>
+<%= render 'shared/articles', articles: @articles%>
 
     
