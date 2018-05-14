@@ -1,0 +1,13 @@
+<div class="col-xs-4 col-md-4">
+  <%= link_to user_path(user) do %>
+    <div class="thumbnail">
+      <div class="user-username" style="padding-bottom:10px">
+        <%= user.username %>
+      </div>
+      <%=gravatar_for(user)%>
+      <div class='user-contributions'>
+        Contributed <%= pluralize(user.articles.size, "Article")%>
+      </div>
+    </div>
+  <% end %>
+</div>

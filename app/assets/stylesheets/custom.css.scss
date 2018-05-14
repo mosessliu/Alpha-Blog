@@ -62,4 +62,9 @@ $navbar-default-bg:rgb(252, 253, 255);
 .thumbnail {
   background-color: rgb(252, 253, 255);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.05), 0 3px 6px 0 rgba(0, 0, 0, 0.1);
+  padding: 15px;
+}
+
+.thumbnail:hover {
+  border-color:lightsalmon;
 }

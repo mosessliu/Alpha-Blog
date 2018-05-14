@@ -1,8 +1,14 @@
 <div class = "well col-xs-8 col-xs-offset-2">
-  <div class = "article-title">
+  <div>
+    <%= gravatar_for(@article.user, size: 40) if @article.user%>
+    <div class = "article-description" style = "margin-top:5px">
+      Contributed by: <strong><%= @article.user.username if @article.user %></strong>
+    </div>
+  </div>
+  <div class = "article-title" style = "margin-top:15px">
     <%= @article.title %>
   </div>
-  <div class = "article-description" style = "margin-top:">
+  <div class = "article-description" style = "margin-top:5px">
     <%= simple_format(@article.description)%></br>
   </div>
   <div class = "article-actions">
