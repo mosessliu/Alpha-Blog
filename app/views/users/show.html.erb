@@ -1,5 +1,9 @@
 <h3 align='center' style='margin-bottom:15px'>
-  <%= @user.username %>'s Articles
+  <% if logged_in? && @user == current_user%>
+    Your Articles
+  <% else %>
+    <%= @user.username %>'s Articles
+  <% end %>
 </h3>
 
 <div class='row' align='center'>
@@ -8,4 +12,8 @@
   </div>
 </div>
 
-<%= render 'shared/articles', articles: @user.articles %>
+<div align="center">
+  <%= will_paginate @user_articles %>
+</div>
+
+<%= render 'shared/articles', articles: @user_articles %>

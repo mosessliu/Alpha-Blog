@@ -1,5 +1,9 @@
 <h3 align = "center" style="margin-bottom:25px">Meet the Alpha Bloggers</h3>
 
+<div align = "center">
+  <%= will_paginate @users %>
+</div>
+
 <div class='col-xs-8 col-xs-offset-2'>
   <% i = 0 %>
   <% while i < @users.size %>
@@ -15,5 +19,4 @@
     </div>
   <% end %>
 </div>
-
 

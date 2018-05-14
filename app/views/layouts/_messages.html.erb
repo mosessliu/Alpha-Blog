@@ -3,7 +3,7 @@
     <% flash.each do |name, msg|%>
       <div class = 'alert alert-<%="#{name}"%> alert-dismissable'>
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-        <strong><%=name.capitalize%>: </strong><%=msg%>
+        <strong><%= name == "success" ? name.capitalize + ": " : ""%></strong><%=msg%>
       </div>
     <% end %>
   </div>

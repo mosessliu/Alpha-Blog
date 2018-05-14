@@ -4,6 +4,13 @@
   <%=link_to "New Article", new_article_path, class:'btn btn-md btn-success'%>
 </div>
 
+<div align="center">
+  <%= will_paginate %>
+</div>
+
 <%= render 'shared/articles', articles: @articles%>
 
+<div align="center">
+  <%= will_paginate %>
+</div>
     
