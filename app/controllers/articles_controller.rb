@@ -1,6 +1,8 @@
 class ArticlesController < ApplicationController
 
   before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :require_user, except: [:index, :show]
+  before_action :require_same_user, only: [:edit, :update, :destroy]
 
   def index
     @articles = Article.paginate(page: params[:page], per_page: 5)
@@ -26,7 +28,6 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    require_user
   end
 
   def update
@@ -39,7 +40,6 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    require_user
     @article.destroy
     flash[:success] = "Article was successfully destroyed"
     redirect_to articles_path
@@ -52,5 +52,11 @@ class ArticlesController < ApplicationController
 
     def set_article
       @article = Article.find params[:id]
+    end
+
+    def require_same_user
+      if current_user != @article.user
+        redirect_to articles_path
+      end
     end
 end

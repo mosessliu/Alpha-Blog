@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   before_action :set_user, only: [:edit, :update, :show]
+  before_action :require_same_user, only: [:edit, :update]
 
   def new
     @user = User.new
@@ -17,7 +18,6 @@ class UsersController < ApplicationController
   end
 
   def edit
-    require_user
   end
 
   def update
@@ -46,5 +46,10 @@ class UsersController < ApplicationController
     def set_user
       @user = User.find(params[:id])
     end
-
+    
+    def require_same_user
+      if !require_user || current_user != @user
+        redirect_to user_path(current_user)
+      end
+    end
 end
