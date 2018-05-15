@@ -42,6 +42,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'will_paginate', '3.1.6'
 gem 'bootstrap-will_paginate', '0.0.10'
+gem 'rails-controller-testing'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

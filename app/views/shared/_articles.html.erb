@@ -15,7 +15,7 @@
         </div>
         <div class = "article-actions" style="margin-top:5px">
           <%=link_to "Show", article_path(article), class:'btn btn-sm btn-success'%>
-          <% if current_user && current_user == article.user %>
+          <% if logged_in? && (current_user == article.user || current_user.admin) %>
             <%=link_to "Edit", edit_article_path(article), class:'btn btn-sm btn-warning'%>
             <%=link_to "Delete", article_path(article), 
               method: :delete, 
