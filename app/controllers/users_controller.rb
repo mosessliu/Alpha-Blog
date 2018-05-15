@@ -49,7 +49,9 @@ class UsersController < ApplicationController
     end
     
     def require_same_user
-      if !require_user || current_user != @user
+      if !logged_in?
+        redirect_to root_path
+      elsif current_user != @user
         redirect_to user_path(current_user)
       end
     end
