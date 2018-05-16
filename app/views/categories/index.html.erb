@@ -1,12 +1,19 @@
-<h3 align = "center" style="margin-bottom:20px">All Categories</h3>
-<div class = "col-xs-4 col-xs-offset-4">
-  <% for category in @categories %>
-    <div class = "row">
-      <div class = "well col-xs-8 col-xs-offset-2">
-        <div align = "center">
-          <%= link_to category.name, category_path(category), class: "article-title" %>
-        </div>
-      </div>
+<h3 align = "center" style="margin-bottom:20px">
+  All Categories <%=link_to "(+)", new_category_path%>
+</h3>
+
+<div class='col-xs-8 col-xs-offset-2'>
+  <% i = 0 %>
+  <% while i < @categories.size %>
+    <div class='row' align='center'>
+      <%= render 'shared/category', category: @categories[i] %>
+      <% if @categories[i + 1] %>
+        <%= render 'shared/category', category: @categories[i + 1] %>
+      <% end %>
+      <% if @categories[i + 2] %>
+        <%= render 'shared/category', category: @categories[i + 2] %>
+      <% end %>
+      <% i += 3 %>
     </div>
   <% end %>
 </div>

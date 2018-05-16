@@ -1,0 +1,20 @@
+<div class = "well col-xs-4">
+  <div align = "center">
+     <%= link_to category.name, category_path(category), class: "article-title" %>
+  </div>
+  <div class="article-description">
+    <%= pluralize(category.articles.count, "Articles")%>
+  </div>
+  <% if logged_in? and current_user.admin? %>
+    <div style="margin-top: 15px", align="center">
+      <%= link_to "Edit Category Name", edit_category_path(category), class: "btn btn-xs btn-warning" %>
+    </div>
+    <div style="margin-top: 5px", align="center">
+      <%= link_to "Delete Category", 
+        category_path(category), 
+        method: :delete, 
+        data: {confirm: "Are you sure you want to delete this category?"},
+        class:"btn btn-xs btn-danger" %>
+    </div>
+  <% end %>
+</div>
