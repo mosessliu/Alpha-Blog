@@ -1,0 +1,9 @@
+<% if article.categories.any? %>
+  <div class = "category-label">
+    Categories: 
+    <% for category in article.categories %>
+      <%= link_to category.name, category_path(category), class: "category-link" %>
+      <span> | </span>
+    <% end %>
+  </div>
+<% end %>
