@@ -1,5 +1,7 @@
 class CategoriesController < ApplicationController
 
+  before_action :require_admin, except: [:index, :show]
+
   def index
     @categories = Category.all
   end
@@ -27,5 +29,10 @@ class CategoriesController < ApplicationController
       return params.require(:category).permit(:name)
     end
 
+    def require_admin
+      if !logged_in? || !current_user.admin
+        redirect_to categories_path
+      end
+    end
 
 end

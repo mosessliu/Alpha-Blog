@@ -5,6 +5,11 @@ class SessionsController < ApplicationController
 
   def create
     user_info = params[:sessions]
+
+    puts params[:session]
+    puts "hello"
+    puts params[:sessions]
+
     user = User.find_by_email(user_info[:email].downcase)
     if user && user.authenticate(user_info[:password])
       session[:user_id] = user.id
