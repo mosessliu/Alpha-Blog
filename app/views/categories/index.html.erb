@@ -1,5 +1,5 @@
 <h3 align = "center" style="margin-bottom:20px">
-  All Categories <%=link_to "(+)", new_category_path%>
+  All Categories <%=(link_to "(+)", new_category_path) if logged_in and current_user.admin%>
 </h3>
 
 <div class='col-xs-8 col-xs-offset-2'>
